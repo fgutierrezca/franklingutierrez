@@ -1,0 +1,24 @@
+---
+title: "Práctica con APIs en SpringBoot"
+description: "Implementación de una Interfaz de Programación (API) con Java SpringBoot para la clase de Lenguajes de Programación."
+enlace: "https://github.com/fgutierrezca/PracticaSpringBoot.git"
+---
+
+# Práctica de Back-End en SpringBoot
+
+El siguiente proyecto fue elaborado para realizar un práctica en el lenguaje de programación Java con el framework SpringBoot. Aquí se manejan los conceptos de modelos, objetos de tranferencia de datos (DTO), repositorios, controladores e implementación de microservicios. SpringBoot utiliza Maven para la incorporación de dependencias de forma más práctica al software.
+
+Se utilizó como base de datos de práctica MySQL y Postman para verificar el funcionamiento correcto de las APIs. El proyecto es un ejemplo básico de reserva de un vehículo, donde se verifica que el cliente esté en el sistema y que el vehículo esté disponible. Como métodos de seguridad la transferencia de datos no actúa directamente en el modelo, sino en el DTO, posteriormente se hace la conversión al modelo en específico.
+
+## Herramienta para facilitar la escritura de código
+
+Maven nos proporciona una dependencia para ahorrar la escritura de muchas líneas de código, se llama **Lombok**. Lombok es una biblioteca Java que proporciona anotaciones para simplificar el desarrollo de Java mediante la automatización de la generación de código repetitivo. Las características clave incluyen la generación automática de métodos getters, setters, equals, hashCode y toString, así como una función para la gestión automática de recursos. Su objetivo es reducir la cantidad de codificación manual, agilizando así la base de código y reduciendo el potencial de errores.
+
+## Estructura del proyecto
+
+1. DTOs: Es el formato de datos el cual se recibe del cliente.
+2. Modelos: Son el mapeo de las tablas en la base de datos.
+3. Repositorios: Son las referencias de los modelos para manipular los datos.
+4. Servicios: Interfaces que incluyen los métodos a implementar.
+5. Implementación de los servicios.
+6. Controladores: Contiene las rutas de las peticiones HTTP.

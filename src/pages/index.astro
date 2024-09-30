@@ -1,16 +1,66 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import InfoIndex from '../components/InfoIndex.astro';
+import { Image } from 'astro:assets';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Franklin Gutierrez - Estudiante de TI">
+    <div class="w-3/4 mx-auto">
+        <div class="text-center mb-12">
+            <Image
+                src="/images/franklinIMG.jpeg"
+                alt="Franklin Gutierrez"
+                width={200}
+                height={200}
+                class="rounded-full border-4 border-gray-600 mx-auto mb-6"
+            />
+          <h1 class="text-4xl font-bold text-gray-600 mb-2">Franklin Gutierrez</h1>
+          <p class="text-xl text-gray-600">Estudiante de Ing. en Sistemas UNAH</p>
+        </div>
+
+        <InfoIndex title='Sobre mi' content='Apasionado por las tecnologías de la información, con un enfoque particular en el desarrollo de software y soluciones de backend. Actualmente, curso el cuarto año de la carrera de Ingeniería en Sistemas en la Universidad Nacional Autónoma de Honduras (UNAH), donde he tenido la oportunidad de trabajar en diversos proyectos académicos, destacando en la implementación de lógica de negocios y la gestión de bases de datos. Mi experiencia no se limita a la parte técnica; también he participado activamente en talleres y actividades que han potenciado mis habilidades en trabajo en equipo, comunicación efectiva y resolución de problemas, cualidades clave en cualquier entorno profesional. Estoy comprometido con seguir aprendiendo y contribuir a proyectos desafiantes que impulsen la innovación y la eficiencia tecnológica en las organizaciones.'></InfoIndex>
+
+        <InfoIndex title='Curiosidad' content='Apasionado por los deportes, especialmente el fútbol y el tenis, desde temprana edad he comprendido el valor del esfuerzo, la disciplina y el trabajo en equipo. Aunque ya no practico fútbol de manera regular, lo mantengo como una actividad física en mi tiempo libre, buscando siempre mantener un estilo de vida equilibrado y activo. Valoro tanto la participación como el apoyo al deporte, ya sea asistiendo a eventos en vivo o a través de plataformas digitales, y disfruto promoviendo la importancia de las actividades físicas entre quienes me rodean. Mi experiencia en deportes me ha enseñado a colaborar eficazmente, adaptarme a diferentes roles dentro de un equipo y mantener un enfoque claro en los objetivos comunes, cualidades que llevo conmigo en cada proyecto de desarrollo en el que participo. Estoy convencido de que la misma dedicación, compromiso y trabajo en equipo que el deporte exige, se traducen en éxito en los equipos de desarrollo tecnológico.'></InfoIndex>
+
+        <InfoIndex title='Actividades de aprendizaje y proyectos' content='A lo largo de mi proceso de formación profesional he tenido la oportunidad de desarrollar diferentes proyectos de clase con diferentes lenguajes de programación, metodologías y paradigmas. Actualmente participo en la creación de proyectos con impacto social del Fablab de la Cámara de Comercio e Industrias de Tegucigalpa (CCIT), donde he tenido la oportunidad de desarrollar habilidades blandas (cómo hablar en público, trabajo en equipo en entornos laborales, comunicación y colaboración) y habilidades técnicas (programación básica en Arduino, diseño y modelado 3D). He participado en actividades sociales, como ser jornadas de reforestación, apoyo en instituciones de servicio social y realización de trabajo comunitario en mi sector de residencia.'></InfoIndex>
+
+        <div class="grid grid-cols-2 gap-4 text-center m-20">
+            <div class="...">
+                <table class="table-auto border-separate border-spacing-5">
+                    <thead>
+                        <h2 class="text-2xl font-semibold text-gray-600 mb-4">
+                            Conocimiento en Front-End
+                        </h2>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><Image src="/images/icons/html.png" alt="HTML" width={48} height={48}/></td>
+                            <td><Image src="/images/icons/css.png" alt="CSS" width={48} height={48}/></td>
+                            <td><Image src="/images/icons/js.png" alt="JS" width={48} height={48}/></td>
+                            <td><Image src="/images/icons/bootstrap.png" alt="BOOTSTRAP" width={48} height={48}/></td>
+                            <td><Image src="/images/icons/tailwind.png" alt="TAILWIND" width={48} height={48}/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="...">
+                <table class="table-auto border-separate border-spacing-5">
+                    <thead>
+                        <h2 class="text-2xl font-semibold text-gray-600 mb-4">
+                            Conocimiento en Back-End
+                        </h2>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><Image src="/images/icons/nodejs.png" alt="NODE" width={48} height={48}/></td>
+                            <td><Image src="/images/icons/ts.png" alt="TS" width={48} height={48}/></td>
+                            <td><Image src="/images/icons/java.png" alt="JAVA" width={48} height={48}/></td>
+                            <td><Image src="/images/icons/springboot.png" alt="SPRINGBOOT" width={48} height={48}/></td>
+                            <td><Image src="/images/icons/python.png" alt="PYTHON" width={48} height={48}/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</Layout>

@@ -1,0 +1,22 @@
+---
+title: "Proyecto POO"
+description: "Implementación de una página web que simule el registro de twitts de forma manual por medio de Java Servlet Pages"
+enlace: "https://github.com/fgutierrezca/Proyecto-POO.git"
+---
+
+# Proyecto POO
+## Análisis y diseño orientado a objetos
+
+El proyecto consiste en la implementación de un sistema de registro de twitts los cuáles son ingresados de forma manual a través de una ventana modal o directamente del archivo .csv que en este caso se utiliza para el almacenamiento de la información. Se muestra en pantalla con twitts ingresados y almacenados, así como el conteo de ciertas estadísticas según cantidad de likes, comentarios, veces compartidos, etc. El sistema fue creado en el sistema operativo **Zorin OS, Linux**.
+
+> **index.jsp: Será la página o vista principal**
+
+Está página contendrá las listas despegables (select), botones o hipervínculos, que llamarán distintas ventanas modales o páginas .jsp que funcionen como controladores. Entre las ventanas modales, debe existir una para la creación de un nuevo registro de mensajes, otra para ver información acerca del autor, incluso una para limpiar ese registro y la ventana modal puede servir como segunda consulta antes de eliminar el registro.
+
+Poseee funcionalidades en Front-End con JavaScript y funcionalidades en Back-End con Java, para las páginas se utiliza la estructura básica creada con HTML, CSS y BootStrap, dentro de un archivo .jsp.
+
+### Funcionalidades específicas .jsp
+- ***serviceClean.jsp*** comunicación asíncrona cuando se desee limpiar el modelo de datos.
+- ***serviceCreate.jsp*** comunicación asíncrona cuando se desee incluir un nuevo registro al modelo de datos.
+- ***serviceDescription.jsp*** comunicación asíncrona cuando se desee extraer la información de un registro.
+- ***serviceInicial.jsp*** comunicación asíncrona cuando se actualice la página o se corra el servidor.

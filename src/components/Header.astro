@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+import ButtonHeader from './ButtonHeader.astro';
+---
+
+<header class="bg-[#64748b]">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between p-3 lg:px-10" aria-label="Global">
+        <div class="flex items-center space-x-4">
+            <Image
+                src="/images/franklinH.jpeg"
+                alt="Franklin Gutierrez"
+                width={50}
+                height={50}
+                class="rounded-full border-2 border-gray-200"
+            />
+            <div>
+                <h1 class="text-xl font-bold text-gray-100">Franklin Gutierrez</h1>
+            </div>
+          </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+            <ButtonHeader href="/" content="Acerca de mi"/>    
+            <ButtonHeader href="/projects" content="Proyectos"/>   
+            <!--<ButtonHeader href="/" content="Cursos y certificaciones"/>-->   
+        </div>
+    </nav>
+</header>
+  
