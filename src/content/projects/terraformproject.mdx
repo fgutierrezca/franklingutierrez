@@ -1,0 +1,64 @@
+---
+title: "Proyecto Terraform"
+description: "Implementación de infraestructura de Azure a través de la herramienta de Terraform para un sistema contable"
+enlace: "https://github.com/fgutierrezca/Arquitectura-de-Azure-Terraform.git"
+
+---
+
+# Proyecto de Terraform
+
+El presente proyecto corresponde a la creación y levantamiento de una infraestructura para un sistema contable a través del portal de Azure de Microsoft por medio de la herramienta de Terraform. Vamos a conocer un poco más sobre Azure y Terrafom.
+
+- ***Azure*** es la plataforma de computación en la nube de Microsoft, que ofrece una amplia gama de servicios para desarrollar, desplegar y gestionar aplicaciones a través de centros de datos globales. Proporciona recursos como almacenamiento, bases de datos, redes, inteligencia artificial, análisis de datos y mucho más, todo accesible a través de la nube. Crea aplicaciones y soluciones inteligentes con tecnología avanzada, herramientas y servicios para llevar una empresa al siguiente nivel. Unifica sin problemas las tecnologías para simplificar la gestión de plataformas y ofrecer innovaciones de forma eficiente y segura en una nube de confianza.
+- ***Terraform*** es una herramienta de infraestructura como código (IaC) desarrollada por HashiCorp que permite a los desarrolladores y administradores de sistemas definir, aprovisionar y gestionar infraestructuras a través de archivos de configuración legibles por humanos. Utilizando un lenguaje declarativo llamado HCL (HashiCorp Configuration Language), Terraform permite describir recursos de infraestructura, como máquinas virtuales, redes, almacenamiento y otros servicios en la nube.
+
+Usaremos como ejemplo la creación de la infraestructura para una aplicación de Contabilidad para un empresa Y. La aplicación estará del lado de la parte administrativa, es decir, empleados. A pesar de incluir varios módulos como ser gestión de cuentas cobrales, manejo de inventario y almacén, registro de partidas contables, entre otras, incluiremos todos los componentes de la aplicación dentro de un único App Service Plan, asumiendo que cada módulo no exige más demanda en comparación a los demás y no existe mucha latencia. El siguiente diagrama describe la arquitectura propuesta. 
+
+![Diagrama de arquitectura](/images/diagrama.jpeg)
+
+Antes de que revises la codificación, estos conceptos son importante de conocer.
+
+* ***Azure Resource Manager (Azure RM)*** Es el servicio de administración de recursos de Microsoft Azure que proporciona una capa de gestión para interactuar, organizar y controlar los recursos en la plataforma. Permite implementar, gestionar y monitorear recursos de Azure, como máquinas virtuales, bases de datos, redes y más, a través de una interfaz unificada.
+* ***Azure service plan*** Contener los distintos webapps para la base de datos. Un plan de App Service define un conjunto de recursos informáticos para que se ejecute una aplicación web.
+* ***Azure app service*** Es un servicio de alojamiento administrado para aplicaciones web y back-ends móviles.
+* ***Azure Container Registry*** Administra imágenes de contenedores Docker privadas, así como formatos de contenido relacionados, como gráficos de Helm, artefactos OCI e imágenes creadas según la especificación de formato de imagen OCI.
+* ***VNETs*** Configuración de red privada
+* ***Private entpoint*** Es como la interfaz de red, conecta la base de datos con las vnets
+* ***DNS Zone*** Crear un nombre de dominio privado local, va a tener permiso para acceder a cualquier segmento de la vnet.
+* ***Record*** Insertar los private endpoint o interfaz de red asignada a la basa de datos que conecta con las subnets.
+* ***Azure Queue Storage*** Es un servicio para almacenar grandes cantidades de mensajes, a los que se puede acceder desde cualquier lugar del mundo a través de llamadas autenticadas mediante HTTP o HTTPS.
+* ***Azure Blob Storage*** Es un servicio de almacenamiento en la nube de Microsoft Azure diseñado para almacenar grandes cantidades de datos no estructurados, como archivos, imágenes, videos, copias de seguridad, registros, y más.
+* ***Azure Function App*** Es un servicio proporcionado por Microsoft Azure que permite ejecutar pequeñas porciones de código, conocidas como funciones, en respuesta a eventos o desencadenadores sin necesidad de preocuparse por la infraestructura subyacente.
+
+La secuencia de pasos a seguir es el siguiente:
+| No      | Descripción     |
+|-------------|-----------------|
+| 1 | Crear el grupo de recursos |
+| 2 | Crear el archivo que contiene las variables globales |
+| 3 | Crear la configuración de las VNETs y subredes |
+| 4 | Crear la conexión a la base de datos |
+| 5 | Crear la gestión de almacenamiento |
+| 6 | Crear las webapps para la UI y API |
+| 7 | Crear las funciones | 
+
+Por último utlizaremos estas líneas de código en la consola de comandos dentro de la carpeta de nuestro proyecto
+
+```
+az login
+```
+Se utiliza para autenticar a un usuario en su cuenta de Azure.
+
+```
+terraform init
+```
+Inicializa un directorio de trabajo de Terraform.
+
+```
+terraform plan
+```
+Analiza tus archivos de configuración de Terraform y el estado actual de la infraestructura.
+
+```
+terraform apply
+```
+Toma el plan que se generó con terraform plan y ejecuta las acciones necesarias para crear, actualizar o eliminar recursos en tu infraestructura según lo definido en tus archivos de configuración.

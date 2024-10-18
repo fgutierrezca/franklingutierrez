@@ -71,10 +71,11 @@ const { Content, headings } = await project.render();
     .prose li { @apply mb-2; }
     .prose strong { @apply text-gray-900; }
     .prose a { @apply text-gray-600 hover:text-gray-500 underline; }
-    .prose pre { @apply bg-gray-100 p-4 rounded-lg overflow-x-auto; }
-    .prose pre code { @apply bg-transparent text-gray-800; }
+    .prose pre { @apply bg-gray-100 border border-gray-300 p-4 overflow-auto rounded; }
+    .prose pre code { @apply text-white; }
     .prose blockquote { @apply border-l-4 border-blue-500 pl-4 italic text-gray-700; }
     .prose table { @apply w-full border-collapse border border-black mb-4; }
     .prose th, .prose td { @apply border border-black p-2; }
     .prose th { @apply bg-gray-100 font-semibold; }
+    .prose img { @apply w-1/2 mx-auto border-2 border-black; }
   </style>
