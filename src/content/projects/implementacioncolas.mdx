@@ -1,0 +1,49 @@
+---
+title: "Proyecto Implementación de colas"
+description: "Implementación de un sistema de login y registro en el cual cada vez que se registre y el usuario no este activo envia un codigo de verificacion al correo"
+enlace: "https://github.com/fgutierrezca/"
+
+---
+
+# Proyecto de Terraform
+
+El presente proyecto corresponde a la implementación de una página web sencilla, la cual contiene el home page, el login y el registro del usuario. La idea principal es hacer el funcionamiento de autenticación con Firebase y autorización manejada con un campo llamado "Active" de la tabla de usuarios en la base de datos, el cual es 0 si e no está activo y 1 si está activo.
+
+Posee lo siguientes elementos:
+
+- ***Frontend*** fue elaborado en NextJS, un framework reactivo para páginas web, el cuál utiliza React y Tailwind como librería CSS. Se manejan cuatro vistas: Homepage, login, registro y activar la cuenta con el código de verificación. El Homepage en nuestro caso lo único que hace es mostrarse a los usuarios que se han autenticado y poseen y token. El login es un formulario con los campos de correo y constraseña. El registro es un formulario con los campos de correo, constraseña, primer nombre y primer apellido. La vista de confirmación de código se utiliza para comparar el código enviado por correo y poder activar la cuenta.
+- ***Backend*** fue elaborado con FastAPI de Python, desde aquí manejamos todos los entpoints que impactan la base de datos. Como autenticación de utilizó Firebase, y el registro en esta plataforma se hace únicamente desde la pestaña de registro. Para el manejo de envíos de correos con el código de activación al usuario se hacen por medio de SendGrid a través de una Azure Function. Cabe destacar que la API y la Azure Function son proyectos separados.
+- ***Gestor de base de datos*** se utilizo una base de Azure SQL, es una familia de servicios de bases de datos relacionales en la nube ofrecidos por Microsoft Azure. Está diseñada para proporcionar una solución escalable, segura y de alto rendimiento para aplicaciones modernas, sin necesidad de gestionar infraestructura física. Todo se maneja a través del gestor de Azure Data Studio.
+- ***Servidor de hosting*** se utilizó Azure, para conocer más sobre la creación de esta infraestructura mejor visitar el proyecto de Terrafom de este portafolio.
+
+Todo se encuentra alojado en la nube, así como los repositorios de cada entidad, los enlaces son los siguientes:
+
+Antes de que revises la codificación, estos conceptos son importante de conocer.
+
+* ***API***
+
+[Repositorio en github](https://github.com/fgutierrezca/ContApp_API)
+[Enlace público del recurso](https://api-sistcontab-dev.azurewebsites.net)
+
+* ***UI***
+
+[Repositorio en github](https://github.com/fgutierrezca/ContApp_UI)
+[Enlace público del recurso](https://ui-sistcontab-dev.azurewebsites.net)
+
+* ***Azure Function***
+
+[Repositorio en github](https://github.com/fgutierrezca/ContApp_azure_function)
+
+Este es el resumen de componentes y herramientas de la aplicación:
+| No      | Descripción     |
+|-------------|-----------------|
+| 1 | NextJS como framework para el FrontEnd |
+| 2 | FastAPI como framework para el Backend |
+| 3 | Azure SQL como gestor de base de datos |
+| 4 | Firebase como plataforma para autenticación |
+| 5 | Azure Function como gestora de mensajes para el envío de correos |
+| 6 | SendGrid para el envío de los correos |
+| 7 | Azure como servidor de Hosting | 
+| 8 | Docker como contenedor de cada recurso | 
+
+Como agregado, usamos Docker para contener y manejar las imágenes de los diferentes recursos, además que fue la principal herramienta para poder subir todos los recursos a Azure.
