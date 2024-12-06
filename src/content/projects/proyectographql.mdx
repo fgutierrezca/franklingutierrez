@@ -1,0 +1,21 @@
+---
+title: "Proyecto de GraphQL"
+description: "Implementación de GraphQL con Express NodeJS para el consumo de API de una base de datos relacional sobre Eventos"
+enlace: "https://github.com/fgutierrezca/graphQl_ContApp.git"
+date: "2024-12-05"
+---
+
+# Proyecto de GraphQL
+
+El presente proyecto corresponde a la implementación de un sistema para el consumo de APIs através de GraphQL, el cual es es un lenguaje de consulta y un tiempo de ejecución del servidor para las interfaces de programación de aplicaciones (API); su función es brindar a los clientes exactamente los datos que solicitan y nada más. Este lo implementamos con el la herramienta para servidores de aplicaciones Express, el cual es una librería del framework de NodeJS, Express está diseñado para construir aplicaciones web de una sola página, multipágina e híbridas, también se ha convertido en el estándar para desarrollar aplicaciones backend con Node.
+
+Paso a paso:
+
+- ***Inicializar el proyecto*** iniciar el proyecto con el comando 'npm init' colocar todas las configuraciones necesarias y al final del proceso instalar todas las librerías necesarias para nuestro proyecto. Revisar el archivo package.json para la instalación de las librerías correspondientes. 
+- ***Crear la base de datos*** elaboramos la base de datos, en nuestro caso es una base de datos de Azure SQL, la cual manejamos directamente desde Azure Data Studio. Para este proyecto de ejemplo, se realizó una base sencilla de cuatro tablas (eventos, asistentes, valoraciones, registro de asistentes), con la condición de que al menos una de las tablas tenga una relación muchos a muchos, para este caso, la tablas registro de asistentes posee esa relación.
+- ***Crear el esquema de GraphQL*** este esquema nos ayudara a definir la estructura de nuestra base para poder realizar nuestras consultas personalizadas a través de la herramienta de Query, como recomendación, tratar de mantener minúsculas, tanto en la base de datos como en el esquema de GraphQL para evitar problemas posteriormente.
+- ***Crear la conexión a la base de datos*** programar la conexión efectiva a la base de datos e incluir en nuestro archivo .env las variables de entorno que se necesiten, revisar todos los archivos que llevan la dependencia de dotenv, para saber que variables se utilizan en el proyecto.
+- ***Crear los resolvers que correspondan*** diseñar todos los resolvers según los tipos que hayamos definido en el esquema. Son funciones que se encargan de responder a las consultas realizadas y de conectar los campos GraphQL con sus fuentes de datos. Tratar de verificar las consultas que llevará cada función.
+- ***Crear las exportaciones de los resolvers*** en un archivo index crear las exportaciones de cada resolver para ser utilizados y consumidos por la UI.
+
+Como adicional, para mantener la seguridad, se incluyó un middleware el cual verifica que el usuario posea un JWT para poder ser autorizado para realizar las consultas a la base de datos.
