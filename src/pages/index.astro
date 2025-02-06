@@ -2,6 +2,25 @@
 import Layout from '../layouts/Layout.astro';
 import InfoIndex from '../components/InfoIndex.astro';
 import { Image } from 'astro:assets';
+import TechList from '../components/TechList.astro';
+
+const technologiesFE = [
+    { name: "HTML", src: "html.png" },
+    { name: "CSS", src: "css.png" },
+    { name: "Bootstrap", src: "bootstrap.png" },
+    { name: "Tailwind", src: "tailwind.png" },
+    { name: "NextJS", src: "nextjs.png" },
+    { name: "AstroJS", src: "astrojs.png" }
+];
+
+const technologiesBE = [
+    { name: "JS", src: "js.png" },
+    { name: "TS", src: "ts.png" },
+    { name: "JAVA", src: "java.png" },
+    { name: "NodeJS", src: "nodejs.png" },
+    { name: "Python", src: "python.png" },
+    { name: "SpringBoot", src: "springboot.png" }
+];
 ---
 
 <Layout title="Franklin Gutierrez - Estudiante de TI">
@@ -24,43 +43,19 @@ import { Image } from 'astro:assets';
 
         <InfoIndex title='Actividades de aprendizaje y proyectos' content='A lo largo de mi proceso de formación profesional he tenido la oportunidad de desarrollar diferentes proyectos de clase con diferentes lenguajes de programación, metodologías y paradigmas. Actualmente participo en la creación de proyectos con impacto social del Fablab de la Cámara de Comercio e Industrias de Tegucigalpa (CCIT), donde he tenido la oportunidad de desarrollar habilidades blandas (cómo hablar en público, trabajo en equipo en entornos laborales, comunicación y colaboración) y habilidades técnicas (programación básica en Arduino, diseño y modelado 3D). He participado en actividades sociales, como ser jornadas de reforestación, apoyo en instituciones de servicio social y realización de trabajo comunitario en mi sector de residencia.'></InfoIndex>
 
-        <!-- <div class="grid grid-cols-2 gap-4 text-center m-20">
-            <div class="...">
-                <table class="table-auto border-separate border-spacing-5">
-                    <thead>
-                        <h2 class="text-2xl font-semibold text-gray-600 mb-4">
-                            Conocimiento en Front-End
-                        </h2>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><Image src="/images/icons/html.png" alt="HTML" width={48} height={48}/></td>
-                            <td><Image src="/images/icons/css.png" alt="CSS" width={48} height={48}/></td>
-                            <td><Image src="/images/icons/js.png" alt="JS" width={48} height={48}/></td>
-                            <td><Image src="/images/icons/bootstrap.png" alt="BOOTSTRAP" width={48} height={48}/></td>
-                            <td><Image src="/images/icons/tailwind.png" alt="TAILWIND" width={48} height={48}/></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="mt-12">
+            <h2 class="sm:text-lg md:text-2xl font-bold text-gray-700 mb-6">Tecnologías Utilizadas</h2>
+          
+            <div class="mb-16 text-center">
+                <h3 class="sm:text-base md:text-xl font-semibold text-gray-600 mb-4">Frontend</h3>
+                <TechList technologies={technologiesFE} />
             </div>
-            <div class="...">
-                <table class="table-auto border-separate border-spacing-5">
-                    <thead>
-                        <h2 class="text-2xl font-semibold text-gray-600 mb-4">
-                            Conocimiento en Back-End
-                        </h2>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><Image src="/images/icons/nodejs.png" alt="NODE" width={48} height={48}/></td>
-                            <td><Image src="/images/icons/ts.png" alt="TS" width={48} height={48}/></td>
-                            <td><Image src="/images/icons/java.png" alt="JAVA" width={48} height={48}/></td>
-                            <td><Image src="/images/icons/springboot.png" alt="SPRINGBOOT" width={48} height={48}/></td>
-                            <td><Image src="/images/icons/python.png" alt="PYTHON" width={48} height={48}/></td>
-                        </tr>
-                    </tbody>
-                </table>
+          
+            <div class="mb-16 text-center">
+                <h3 class="sm:text-base md:text-xl font-semibold text-gray-600 mb-4">Backend</h3>
+                <TechList technologies={technologiesBE} />
             </div>
-        </div> -->
+        </div>
+
     </div>
 </Layout>
